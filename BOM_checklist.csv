@@ -1,0 +1,21 @@
+Category,Item,Qty,Specification,Notes
+Audio,JVC CS-J520X Speakers,1 pair,5.25" (13 cm) 2-Way Coaxial 30W RMS 4 Ohm,Cutout 118mm / Rim 132mm / Depth 43.5mm
+Audio,AI-Thinker ESP32-A1S AudioKit,1,ES8388 Codec Revision with 8MB PSRAM,Required PSRAM for Squeezelite-ESP32
+Audio,TPA3116D2 Stereo Amplifier Board,1,2x50W Class-D (12V-24V DC input),Cap volume knob at ~70% on 19V/4S
+Audio,3.5mm Ground Loop Isolator,1,Passive stereo audio isolator,Eliminates ESP32 digital noise whine
+Power,4S Li-ion Battery Pack,1,14.8V nominal / 16.8V full (5000-6000mAh) with built-in BMS,Minimum 5A-10A continuous discharge rating
+Power,XL4015 CC/CV Buck Charger Module,1,5A Dual-Potentiometer CC/CV step-down board,Calibrate to 16.8V & 1.5A-2.0A before connecting
+Power,1N5822 or SR560 Schottky Diode,1,3A-5A Schottky barrier diode,Prevents battery back-feed into XL4015 LEDs
+Power,Mini DC-DC 5V Buck Converter,1,MP1584EN or LM2596 (input up to 28V),Calibrate to 5.0V for ESP32-A1S 5V pin
+Power,5.5x2.1mm DC Barrel Jack,1,Panel-mount female jack (rated >=3A),Mounts in rear 3D-printed bulkhead
+Power,Inline Blade Fuse Holder + 5A Fuse,1,Automotive mini blade fuse,Install on battery positive lead for safety
+Hardware,4-Pin Right-Angle Magnetic Pogo Connectors,2 pairs,2.54mm pitch with alignment bosses (Male+Female),Bridge Pins 1+2 (+) and 3+4 (-) for 6A rating
+Hardware,Toggle Draw Latches,4,Spring-loaded stainless steel latches,2 per seam (left & right front edges)
+Hardware,Wooden Alignment Dowels,8,6mm x 25mm fluted birch dowels,4 per mating seam
+Hardware,Main Power Toggle Switch,1,12mm panel-mount SPST switch,Mounts on lower center control panel
+Hardware,Top Carrying Handle,1,Strap or folding case handle + M4 T-nuts,Mounts on center top panel
+Hardware,Neodymium Magnets,8,6mm x 2mm disc magnets,4 in rear pocket body + 4 in magnetic cover
+Enclosure,12mm Baltic Birch Plywood (or MDF),1 sheet,122cm x 61cm (void-free birch recommended),18 panels total (230x170mm max footprint)
+Enclosure,Acoustic Polyfill Stuffing,1 bag,Polyester fiberfill,Loosely fill 75% of each speaker pod
+Optional Accessories,4-Pin Magnetic Pogo Connectors (Extension Kit),2 pairs,Same 4-pin magnetic pogo connectors,Sold as optional wide-stereo separation add-on
+Optional Accessories,16 AWG Speaker Wire (Extension Kit),3 meters,Flexible 2-conductor speaker cable,Cut into two 1.5m magnetic extension cables

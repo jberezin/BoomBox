@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open-Source Modular Boombox — Web Flasher</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    :root {
+      --bg: #141517;
+      --card: #1f2125;
+      --border: #32363e;
+      --text: #f1f3f5;
+      --muted: #adb5bd;
+      --accent: #d97706;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.85rem;
+      margin-bottom: 0.4rem;
+    }
+    p.subtitle {
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(217, 119, 6, 0.18);
+      color: #fbbf24;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 1.25rem 0;
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin: 0 0 1.5rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+    .instructions {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .instructions strong {
+      color: var(--text);
+    }
+    code {
+      background: #2b2e34;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: #f8f9fa;
+      font-size: 0.88em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Modular Boombox Firmware Flasher</h1>
+    <p class="subtitle">
+      Switch your AI-Thinker ESP32-A1S AudioKit between standalone Bluetooth DSP mode and multi-room Wi-Fi streaming directly from Chrome, Edge, or Brave.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="badge">Default Firmware</span>
+          <h2>Bluetooth A2DP + Sealed-Box DSP</h2>
+          <p>Instant zero-config Bluetooth speaker powered by Phil Schatzmann's AudioTools &amp; ESP32-A2DP libraries.</p>
+          <ul>
+            <li>40 Hz subsonic protection + 75 Hz (+5 dB) bass shelf</li>
+            <li>AVRCP phone volume &amp; track metadata sync</li>
+            <li>Physical button support (Play/Pause, Vol-, Vol+, Next)</li>
+          </ul>
+        </div>
+        <esp-web-install-button manifest="./manifest_bluetooth.json"></esp-web-install-button>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Multi-Room Streaming</span>
+          <h2>Squeezelite-ESP32 (Sonos-Style)</h2>
+          <p>Turn your boombox into a synchronized Wi-Fi multi-room player with AirPlay, Spotify Connect, and LMS support.</p>
+          <ul>
+            <li>AirPlay, Spotify Connect &amp; Lyrion Music Server</li>
+            <li>Browser-based Wi-Fi &amp; EQ configuration portal</li>
+            <li>Select <strong>AudioKit (ES8388)</strong> profile after flashing</li>
+          </ul>
+        </div>
+        <esp-web-install-button manifest="./manifest_squeezelite.json"></esp-web-install-button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong>How to Flash:</strong>
+      <ol>
+        <li>Connect a USB data cable from your computer to the boombox's <strong>USB-UART programming port</strong>.</li>
+        <li>Click <strong>Install</strong> under your chosen firmware and select the USB serial port (usually <code>CP2102</code> or <code>CH340</code>).</li>
+        <li>If prompted to connect, hold the <code>BOOT</code> button on the ESP32-A1S while tapping <code>RST</code>, then release <code>BOOT</code>.</li>
+        <li>After flashing Squeezelite-ESP32, connect to its temporary Wi-Fi hotspot, open the web UI, and pick the <strong>AudioKit (ES8388)</strong> hardware preset.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

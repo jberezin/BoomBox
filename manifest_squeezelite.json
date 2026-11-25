@@ -1,0 +1,13 @@
+{
+  "name": "Modular Boombox — Squeezelite-ESP32 (ES8388)",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "firmware/squeezelite/squeezelite-esp32-16-4.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

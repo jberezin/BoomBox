@@ -1,0 +1,17 @@
+{
+  "name": "Modular Boombox — Bluetooth A2DP + DSP",
+  "version": "1.0.0",
+  "home_assistant_domain": "",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "firmware/bluetooth/bootloader.bin", "offset": 4096 },
+        { "path": "firmware/bluetooth/partitions.bin", "offset": 32768 },
+        { "path": "firmware/bluetooth/boot_app0.bin", "offset": 57344 },
+        { "path": "firmware/bluetooth/firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
